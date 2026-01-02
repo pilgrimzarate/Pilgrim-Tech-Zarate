@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pilgrim Tech</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #1f2933;
+            color: #e5e7eb;
+        }
+        header {
+            background: #111827;
+            color: #facc15;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .producto {
+            background: #374151;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        button {
+            background: #facc15;
+            color: #111827;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #carrito {
+            background: #4b5563;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        footer {
+            background: #111827;
+            color: #facc15;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        a {
+            color: #facc15;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pilgrim Tech</h1>
+    <p>Tecnología • Envíos a todo el país</p>
+</header>
+
+<div class="container">
+    <h2>Productos</h2>
+
+    <div class="producto">
+        <h3>Auriculares Bluetooth</h3>
+        <p>Precio: $25.000</p>
+        <p>Stock: 8 unidades</p>
+        <button onclick="agregarCarrito('Auriculares Bluetooth', 25000)">
+            Agregar al carrito
+        </button>
+    </div>
+
+    <div id="carrito">
+        <h2>🛒 Carrito</h2>
+        <ul id="listaCarrito"></ul>
+        <p><strong>Total: $<span id="total">0</span></strong></p>
+        <button onclick="comprar()">Finalizar compra por WhatsApp</button>
+    </div>
+
+    <h2>Formas de pago</h2>
+    <p>Mercado Pago • Transferencia • Efectivo</p>
+
+    <h2>Ubicación</h2>
+    <p>Argentina – Envíos a todo el país</p>
+
+    <h2>Contacto</h2>
+    <p>
+        <a href="#">Instagram</a> |
+        <a href="#">TikTok</a> |
+        <a href="#">WhatsApp</a>
+    </p>
+</div>
+
+<footer>
+    <p>© 2025 Pilgrim Tech</p>
+</footer>
+
+<script>
+    let total = 0;
+    let mensaje = "Hola, quiero comprar:%0A";
+
+    function agregarCarrito(nombre, precio) {
+        const lista = document.getElementById("listaCarrito");
+        const item = document.createElement("li");
+        item.textContent = nombre + " - $" + precio;
+        lista.appendChild(item);
+
+        total += precio;
+        document.getElementById("total").textContent = total;
+
+        mensaje += "- " + nombre + " ($" + precio + ")%0A";
+    }
+
+    function comprar() {
+        window.location.href = "https://wa.me/549XXXXXXXXXX?text=" + mensaje + "Total: $" + total;
+    }
+</script>
+
+</body>
+</html>
