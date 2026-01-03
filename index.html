@@ -90,12 +90,23 @@
     <h2>Productos</h2>
 
     <!-- PRODUCTO 1 -->
-    <div class=p47verde.png>
+    <div class="producto">
         <img src="./p47verde.png" alt="Auriculares Bluetooth P47">
         <h3>Auriculares Bluetooth P47</h3>
         <p>Precio: $6.000</p>
         <p>Stock: 2 unidades</p>
         <button onclick="agregarCarrito('Auriculares Bluetooth P47', 6000)">
+            Agregar al carrito
+        </button>
+    </div>
+
+    <!-- PRODUCTO 2 -->
+    <div class="producto">
+        <img src="./auricularm10.png" alt="Auricular Inalámbrico M10">
+        <h3>Auricular Inalámbrico M10</h3>
+        <p>Precio: $12.000</p>
+        <p>Stock: 1 unidad</p>
+        <button onclick="agregarCarrito('Auricular Inalámbrico M10', 12000)">
             Agregar al carrito
         </button>
     </div>
@@ -131,4 +142,26 @@
     let total = 0;
     let mensaje = "Hola, quiero comprar:%0A";
 
-    function agregarCarrito(no
+    function agregarCarrito(nombre, precio) {
+        const lista = document.getElementById("listaCarrito");
+        const item = document.createElement("li");
+        item.textContent = nombre + " - $" + precio;
+        lista.appendChild(item);
+
+        total += precio;
+        document.getElementById("total").textContent = total;
+
+        mensaje += "- " + nombre + " ($" + precio + ")%0A";
+    }
+
+    function comprar() {
+        window.location.href =
+            "https://wa.me/549XXXXXXXXXX?text=" +
+            mensaje +
+            "Total: $" + total;
+    }
+</script>
+
+</body>
+</html>
+
