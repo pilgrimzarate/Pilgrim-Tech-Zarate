@@ -40,9 +40,9 @@
         }
 
         .producto img {
-            width: 200px;
+            width: 180px;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin: 5px;
         }
 
         button {
@@ -91,11 +91,11 @@
 
     <!-- PRODUCTO 1 -->
     <div class="producto">
-        <img src="./p47verde.png" alt="Auriculares Bluetooth P47">
-        <h3>Auriculares Bluetooth P47</h3>
+        <img src="./p47verde.png" alt="Auricular inalámbrico P47 verde">
+        <h3>Auricular inalámbrico P47 (Verde)</h3>
         <p>Precio: $6.000</p>
         <p>Stock: 2 unidades</p>
-        <button onclick="agregarCarrito('Auriculares Bluetooth P47', 6000)">
+        <button onclick="agregarCarrito('Auricular inalámbrico P47 Verde', 6000)">
             Agregar al carrito
         </button>
     </div>
@@ -106,62 +106,5 @@
         <h3>Auricular Inalámbrico M10</h3>
         <p>Precio: $12.000</p>
         <p>Stock: 1 unidad</p>
-        <button onclick="agregarCarrito('Auricular Inalámbrico M10', 12000)">
-            Agregar al carrito
-        </button>
-    </div>
-
-    <!-- CARRITO -->
-    <div id="carrito">
-        <h2>🛒 Carrito</h2>
-        <ul id="listaCarrito"></ul>
-        <p><strong>Total: $<span id="total">0</span></strong></p>
-        <button onclick="comprar()">Finalizar compra por WhatsApp</button>
-    </div>
-
-    <h2>Formas de pago</h2>
-    <p>Mercado Pago • Transferencia • Efectivo</p>
-
-    <h2>Ubicación</h2>
-    <p>Argentina – Envíos a todo el país</p>
-
-    <h2>Contacto</h2>
-    <p>
-        <a href="https://www.instagram.com/pilgrimtechzarate" target="_blank">Instagram</a> |
-        <a href="https://www.tiktok.com/@pilgrimtechzarate" target="_blank">TikTok</a> |
-        <a href="https://wa.me/549XXXXXXXXXX" target="_blank">WhatsApp</a>
-    </p>
-
-</div>
-
-<footer>
-    <p>© 2025 Pilgrim Tech</p>
-</footer>
-
-<script>
-    let total = 0;
-    let mensaje = "Hola, quiero comprar:%0A";
-
-    function agregarCarrito(nombre, precio) {
-        const lista = document.getElementById("listaCarrito");
-        const item = document.createElement("li");
-        item.textContent = nombre + " - $" + precio;
-        lista.appendChild(item);
-
-        total += precio;
-        document.getElementById("total").textContent = total;
-
-        mensaje += "- " + nombre + " ($" + precio + ")%0A";
-    }
-
-    function comprar() {
-        window.location.href =
-            "https://wa.me/549XXXXXXXXXX?text=" +
-            mensaje +
-            "Total: $" + total;
-    }
-</script>
-
-</body>
-</html>
+        <button onclick="agregar
 
